@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belaajr spesificity</title>
+    <style>
+        /* tag = 1, class = 10, id  = 100 */
+        
+        /* 132 */
+        div.container #header .content h1.judul{
+            color: red;
+            font-size: 30px;
+        }
+
+        /* 111 */
+        #header .content h1{
+            color: blue;
+            font-size: 16px;
+        }
+
+
+        /* 134 */
+        div.container #header div.content p.text span{
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .text span{
+            color: red !important;
+        }
+
+
+        /* 
+        div = 1
+        .container = 10
+        #header = 100
+        .content = 10
+        h1 = 1,
+        .judul = 10
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="content">
+                <h1 class="judul">hello world</h1>
+                <p class="text">Lorem ipsum  <span>dolor sit</span> amet consectetur adipisicing elit. Itaque, officiis?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
